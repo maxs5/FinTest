@@ -371,14 +371,14 @@ function figmaMakeKitPlugin(options: {
   const RESOLVED_ID = "\0" + VIRTUAL_ID
   const STORIES_MODULE = `export const stories = import.meta.glob(${JSON.stringify(storiesGlob)})`
   const HTML_BOOTSTRAP = `<!doctype html>
-<html lang=\"en\">
+<html lang="en">
 <head>
-<meta charset=\"UTF-8\" />
-<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-<div id=\"figma-make-kit-root\"></div>
-<script type=\"module\">
+<div id="figma-make-kit-root"></div>
+<script type="module">
   import { stories } from "virtual:figma-stories"
   window.__FIGMA__ = Object.assign(window.__FIGMA__ ?? {}, { stories })
   window.dispatchEvent(new CustomEvent("figma.ready"))
