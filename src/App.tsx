@@ -1,4 +1,12 @@
-import { Component, lazy, Suspense, useEffect, useState, type ErrorInfo, type ReactNode } from "react"
+import {
+  Component,
+  lazy,
+  Suspense,
+  useEffect,
+  useState,
+  type ErrorInfo,
+  type ReactNode,
+} from "react"
 import { AlertTriangle, RefreshCw } from "lucide-react"
 import { AppShell, type PageId } from "./components/AppShell"
 import { Button, Card } from "./components/ui"
