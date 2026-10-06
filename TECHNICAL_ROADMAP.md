@@ -2,15 +2,15 @@
 
 ## Current state
 
-CURRENT STAGE: 06 — Backend/API Foundation
+CURRENT STAGE: 07 — PostgreSQL Connection
 
 - [x] 01 — GitHub Repository
 - [x] 02 — Vercel Project
 - [x] 03 — Monorepo Foundation (workspace boundaries established)
 - [x] 04 — TypeScript and Tooling (typecheck, formatting, and lint checks pass on Vercel)
 - [x] 05 — Frontend Foundation (Vercel quality gate passed)
-- [~] 06 — Backend/API Foundation
-- [ ] 07 — PostgreSQL Connection
+- [x] 06 — Backend/API Foundation
+- [~] 07 — PostgreSQL Connection
 - [ ] 08 — Environment Configuration
 - [ ] 09 — Database Migrations
 - [ ] 10 — Database Schema
@@ -26,7 +26,10 @@ Verified Vercel state:
 
 Current application state:
 - React/Vite/Tailwind presentation UI exists.
-- No backend, database, persistence or automated test suite exists yet.
+- Vercel-compatible Node REST API exists under /api.
+- PostgreSQL connection foundation exists through Neon serverless driver.
+- DATABASE_URL is expected only as a server-side environment variable.
+- Automated test suite and persistent domain schema do not exist yet.
 - Largest inspected source file is below the 1,500-line hard limit.
 
 ## Development rule
@@ -106,6 +109,26 @@ All work must use a new branch. main is never edited directly.
 
 Stage 05 is not complete until the full Vercel quality gate passes: typecheck, format check, lint and production build.
 
+## Stage 06 scope
+
+- Vercel-compatible Node REST endpoint at `GET /api/health`.
+- Explicit rejection of unsupported HTTP methods.
+- API code included in the TypeScript quality gate.
+- No persistence or domain business logic introduced.
+
+Stage 06 is complete after successful Vercel deployment verification.
+
+## Stage 07 scope
+
+- PostgreSQL provider selected with the no-paid-services constraint.
+- Serverless PostgreSQL driver added without exposing database credentials to the client.
+- `DATABASE_URL` reserved as the server-side connection variable.
+- `GET /api/db-health` verifies database reachability with `SELECT 1`.
+- Database provider details isolated from future domain services.
+- No migrations, schema or seed data are introduced yet.
+
+Stage 07 is complete only after a real Neon database is connected and the Vercel database health endpoint returns `200`.
+
 ## Next
 
-Finish Stage 05 verification, then proceed to Stage 06 — Backend/API Foundation.
+Connect a Neon PostgreSQL project through `DATABASE_URL`, verify `GET /api/db-health` on Vercel, then proceed to Stage 08 — Environment Configuration.
