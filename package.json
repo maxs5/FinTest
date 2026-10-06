@@ -9,10 +9,11 @@
     "build": "pnpm check && vite build",
     "preview": "vite preview",
     "format": "oxfmt",
-    "typecheck": "tsc --noEmit",
     "format:check": "oxfmt --check .",
+    "typecheck": "tsc --noEmit",
     "check": "pnpm typecheck && pnpm format:check && pnpm lint",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "db:migrate": "node database/scripts/migrate.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "1.1.0",
