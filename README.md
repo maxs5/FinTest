@@ -38,9 +38,10 @@ pnpm-workspace.yaml now defines the root application and future apps/* and packa
 | 03 — Monorepo Foundation | Complete |
 | 04 — TypeScript and Tooling | Complete |
 | 05 — Frontend Foundation | Complete |
-| 06 — Backend/API Foundation | In progress |\n| 07–45 | Not started |
+| 06 — Backend/API Foundation | Complete |\n| 07 — PostgreSQL Connection | In progress |
+| 08–45 | Not started |
 
-The current UI is still a synthetic presentation layer. Stage 05 is complete with stable client-side navigation, lazy page loading, an application-level error boundary, and accessible loading semantics. Stage 06 adds the first Vercel-compatible REST endpoint; persistence and real financial operations remain out of scope until the database and domain stages.
+The current UI is still a synthetic presentation layer. Stage 05 is complete with stable client-side navigation, lazy page loading, an application-level error boundary, and accessible loading semantics. Stage 06 is complete with the first Vercel-compatible REST endpoint. Stage 07 adds the PostgreSQL connection foundation and a database health endpoint; real domain persistence remains out of scope until migrations and schema stages.
 
 ## Development
 
@@ -78,6 +79,6 @@ See TECHNICAL_ROADMAP.md for the authoritative development state and next action
 
 ## First vertical slice
 
-React UI → register/login → GET /me → account → PostgreSQL → dashboard
+React UI → API → service → repository → PostgreSQL → dashboard
 
 It starts only after the foundation stages have been verified.
