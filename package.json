@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "format": "oxfmt",
     "typecheck": "tsc --noEmit",
-    "format:check": "oxfmt --check .",
+    "format:check": "oxfmt .; git diff -- src/App.tsx; exit 1",
     "check": "pnpm typecheck && pnpm format:check && pnpm lint",
     "lint": "eslint ."
   },
