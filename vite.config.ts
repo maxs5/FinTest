@@ -254,7 +254,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
  * the overlay stays hidden even though the build is still broken.
  * We intercept `ws.send` to remember the latest error and replay
  * it on every new connection; the cache clears on a successful
- * `update` or `full-reload` so a stale overlay can"t survive a
+ * `update` or `full-reload` so a stale overlay can't survive a
  * fixed build.
  */
 function figmaErrorOverlayReplay(): Plugin {
@@ -294,7 +294,7 @@ function figmaErrorOverlayReplay(): Plugin {
  *
  *   export { default } from "./app/App"
  *
- * Vite otherwise accepts the update using the previous module"s HMR boundary,
+ * Vite otherwise accepts the update using the previous module's HMR boundary,
  * but the re-export-only transform no longer registers a replacement for the
  * mounted component family. React reports a successful refresh while leaving
  * the old tree mounted until the page is reloaded.
@@ -335,7 +335,7 @@ function figmaReactRefreshBoundaryFallback(): Plugin {
  * import + mount each entry into its own grid view.
  *
  * Dev-only: `apply: "serve"` gates the plugin to `vite dev`. Prod
- * builds (`vite build`) skip it entirely so the route doesn"t leak
+ * builds (`vite build`) skip it entirely so the route doesn't leak
  * into shipped bundles.
  */
 function figmaMakeKitPlugin(options: { storiesGlob: string | string[] }): Plugin {
@@ -379,7 +379,7 @@ function figmaMakeKitPlugin(options: { storiesGlob: string | string[] }): Plugin
         if (url.split("?")[0] !== ROUTE) return next()
 
         try {
-          res.setHeader("Content-Type", "text/html')
+          res.setHeader("Content-Type", "text/html")
           res.end(await server.transformIndexHtml(url, HTML_BOOTSTRAP))
         } catch (err) {
           next(err as Error)
