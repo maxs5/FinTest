@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "format": "oxfmt",
     "typecheck": "tsc --noEmit",
-    "format:check": "oxfmt --check . || (oxfmt src/components/AppShell.tsx && git diff -- src/components/AppShell.tsx && exit 1)",
+    "format:check": "oxfmt --check .",
     "check": "pnpm typecheck && pnpm format:check && pnpm lint",
     "lint": "eslint ."
   },
