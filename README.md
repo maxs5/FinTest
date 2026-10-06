@@ -37,10 +37,10 @@ pnpm-workspace.yaml now defines the root application and future apps/* and packa
 | 02 — Vercel Project | Complete |
 | 03 — Monorepo Foundation | Complete |
 | 04 — TypeScript and Tooling | Complete |
-| 05 — Frontend Foundation | In progress |
-| 06–45 | Not started |
+| 05 — Frontend Foundation | Complete |
+| 06 — Backend/API Foundation | In progress |\n| 07–45 | Not started |
 
-The current UI is still a synthetic presentation layer. Stage 05 now provides stable client-side navigation, lazy page loading, and an application-level error boundary; persistence and real financial operations remain out of scope until the backend stages.
+The current UI is still a synthetic presentation layer. Stage 05 is complete with stable client-side navigation, lazy page loading, an application-level error boundary, and accessible loading semantics. Stage 06 adds the first Vercel-compatible REST endpoint; persistence and real financial operations remain out of scope until the database and domain stages.
 
 ## Development
 
