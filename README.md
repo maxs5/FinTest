@@ -39,10 +39,11 @@ pnpm-workspace.yaml now defines the root application and future apps/* and packa
 | 04 — TypeScript and Tooling | Complete |
 | 05 — Frontend Foundation | Complete |
 | 06 — Backend/API Foundation | Complete |
-| 07 — PostgreSQL Connection | In progress |
-| 08–45 | Not started |
+| 07 — PostgreSQL Connection | Complete |
+| 08 — Environment Configuration | In progress |
+| 09–45 | Not started |
 
-The current UI is still a synthetic presentation layer. Stage 05 is complete with stable client-side navigation, lazy page loading, an application-level error boundary, and accessible loading semantics. Stage 06 is complete with the first Vercel-compatible REST endpoint. Stage 07 adds the PostgreSQL connection foundation and a database health endpoint; real domain persistence remains out of scope until migrations and schema stages.
+The current UI is still a synthetic presentation layer. Stage 05 is complete with stable client-side navigation, lazy page loading, an application-level error boundary, and accessible loading semantics. Stage 06 is complete with the first Vercel-compatible REST endpoint. Stage 07 adds the PostgreSQL connection foundation and a database health endpoint. Stage 08 centralizes server configuration and documents the environment contract; real domain persistence remains out of scope until migrations and schema stages.
 
 ## Development
 
