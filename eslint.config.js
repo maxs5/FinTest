@@ -6,7 +6,7 @@ import tseslint from "typescript-eslint"
 
 export default defineConfig(
   {
-    ignores: ["dist/**", "node_modules/**"],
+    ignores: ["dist/**", "node_modules/**", ".vercel/**"],
   },
   {
     files: ["**/*.{ts,tsx,mts,cts}"],
