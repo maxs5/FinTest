@@ -2,7 +2,7 @@
 
 ## Current state
 
-CURRENT STAGE: 08 — Environment Configuration
+CURRENT STAGE: 09 — Database Migrations
 
 - [x] 01 — GitHub Repository
 - [x] 02 — Vercel Project
@@ -11,8 +11,8 @@ CURRENT STAGE: 08 — Environment Configuration
 - [x] 05 — Frontend Foundation (Vercel quality gate passed)
 - [x] 06 — Backend/API Foundation
 - [x] 07 — PostgreSQL Connection
-- [~] 08 — Environment Configuration
-- [ ] 09 — Database Migrations
+- [x] 08 — Environment Configuration
+- [~] 09 — Database Migrations
 - [ ] 10 — Database Schema
 - [ ] 11 — Seed/Test Data
 - [ ] 12–45 — Core fintech, QA Workspace and quality engineering
@@ -29,7 +29,8 @@ Current application state:
 - Vercel-compatible Node REST API exists under /api.
 - PostgreSQL connection foundation exists through Neon serverless driver.
 - DATABASE_URL is expected only as a server-side environment variable.
-- Automated test suite and persistent domain schema do not exist yet.
+- Versioned database migration infrastructure now exists.
+- Automated test suite and persistent fintech domain schema do not exist yet.
 - Largest inspected source file is below the 1,500-line hard limit.
 
 ## Development rule
@@ -111,7 +112,7 @@ Stage 05 is not complete until the full Vercel quality gate passes: typecheck, f
 
 ## Stage 06 scope
 
-- Vercel-compatible Node REST endpoint at `GET /api/health`.
+- Vercel-compatible Node REST endpoint at GET /api/health.
 - Explicit rejection of unsupported HTTP methods.
 - API code included in the TypeScript quality gate.
 - No persistence or domain business logic introduced.
@@ -122,24 +123,36 @@ Stage 06 is complete after successful Vercel deployment verification.
 
 - PostgreSQL provider selected with the no-paid-services constraint.
 - Serverless PostgreSQL driver added without exposing database credentials to the client.
-- `DATABASE_URL` reserved as the server-side connection variable.
-- `GET /api/db-health` verifies database reachability with `SELECT 1`.
+- DATABASE_URL reserved as the server-side connection variable.
+- GET /api/db-health verifies database reachability with SELECT 1.
 - Database provider details isolated from future domain services.
 - No migrations, schema or seed data are introduced yet.
 
-Stage 07 is complete after the real Neon database was connected and the Vercel database health endpoint returned `200`.
+Stage 07 is complete after the real Neon database was connected and the Vercel database health endpoint returned 200.
 
 ## Stage 08 scope
 
 - Central server configuration module introduced.
-- `DATABASE_URL` parsing removed from individual API routes.
-- Safe `.env.example` added without credentials.
+- DATABASE_URL parsing removed from individual API routes.
+- Safe .env.example added without credentials.
 - DEV, QA, STAGE and PROD-SIM configuration mapping documented.
 - Server-only secrets explicitly separated from browser configuration.
 - Environment configuration rules documented for Vercel and local development.
 
-Stage 08 is complete only after the quality gate passes on Vercel with the centralized configuration in place.
+Stage 08 is complete after the quality gate passed on Vercel with the centralized configuration in place.
+
+## Stage 09 scope
+
+- Versioned SQL migrations introduced under database/migrations.
+- Migration metadata stored in public.schema_migrations.
+- Applied migration checksums are verified to prevent silent edits.
+- Migration batches run in a PostgreSQL transaction.
+- A transaction-level advisory lock serializes concurrent migration runners.
+- db:migrate provides one explicit migration command.
+- Domain schema remains deferred to Stage 10.
+
+Stage 09 is complete only after the quality gate passes on Vercel and the migration runner is verified against the configured Neon database.
 
 ## Next
 
-Verify the Stage 08 quality gate on Vercel, then proceed to Stage 09 — Database Migrations.
+Verify Stage 09 on Vercel and run the migration command against the configured Neon database. Then proceed to Stage 10 — Database Schema.
