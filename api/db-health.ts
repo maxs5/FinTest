@@ -1,4 +1,5 @@
 import { neon } from "@neondatabase/serverless"
+import { serverConfig } from "./config"
 import type { IncomingMessage, ServerResponse } from "node:http"
 
 type DatabaseHealthResponse = {
@@ -18,7 +19,7 @@ export default async function handler(
     return
   }
 
-  const databaseUrl = process.env.DATABASE_URL
+  const databaseUrl = serverConfig.databaseUrl
 
   if (!databaseUrl) {
     res.writeHead(503, { "Content-Type": "application/json" })
