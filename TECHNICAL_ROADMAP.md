@@ -2,14 +2,14 @@
 
 ## Current state
 
-CURRENT STAGE: 05 — Frontend Foundation
+CURRENT STAGE: 06 — Backend/API Foundation
 
 - [x] 01 — GitHub Repository
 - [x] 02 — Vercel Project
 - [x] 03 — Monorepo Foundation (workspace boundaries established)
 - [x] 04 — TypeScript and Tooling (typecheck, formatting, and lint checks pass on Vercel)
-- [~] 05 — Frontend Foundation
-- [ ] 06 — Backend/API Foundation
+- [x] 05 — Frontend Foundation (Vercel quality gate passed)
+- [~] 06 — Backend/API Foundation
 - [ ] 07 — PostgreSQL Connection
 - [ ] 08 — Environment Configuration
 - [ ] 09 — Database Migrations
