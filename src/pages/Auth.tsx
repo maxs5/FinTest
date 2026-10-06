@@ -16,7 +16,7 @@ export default function AuthPage({ onLogin }: { onLogin: () => void }) {
     onLogin()
   }
   return (
-    <div className="grid min-h-screen bg-canvas lg:grid-cols-[1.05fr_0.95fr]">
+    <div className="grid min-h-screen bg-canvas/70 lg:grid-cols-[1.05fr_0.95fr]">
       <section className="relative hidden overflow-hidden bg-sidebar p-12 text-white lg:flex lg:flex-col">
         <div className="absolute -left-36 -top-44 size-[34rem] rounded-full border-[5rem] border-white/5" />
         <div className="absolute -bottom-48 -right-36 size-[32rem] rounded-full border-[5rem] border-accent/10" />

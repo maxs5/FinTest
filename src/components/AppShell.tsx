@@ -96,8 +96,8 @@ function NavGroup({
             onClick={() => onSelect(id)}
             className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition ${
               active === id
-                ? "bg-gradient-to-r from-accent to-purple text-white shadow-lg shadow-accent/10"
-                : "text-sidebar-text hover:bg-white/8 hover:text-white"
+                ? "border border-white/10 bg-white/10 text-white shadow-sm"
+                : "border border-transparent text-sidebar-text hover:bg-white/6 hover:text-white"
             }`}
           >
             <Icon size={18} strokeWidth={active === id ? 2.4 : 1.8} />
@@ -132,9 +132,9 @@ export function AppShell({
   }
 
   return (
-    <div className="min-h-screen bg-canvas text-ink">
+    <div className="min-h-screen bg-canvas/70 text-ink">
       <aside
-        className={`fixed inset-y-0 left-0 z-40 flex w-72 flex-col bg-sidebar px-4 py-5 transition-transform duration-300 lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 flex w-72 flex-col border-r border-white/8 bg-sidebar/90 px-4 py-5 backdrop-blur-2xl transition-transform duration-300 lg:translate-x-0 ${
           mobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -203,7 +203,7 @@ export function AppShell({
       )}
 
       <div className="lg:pl-72">
-        <div className="sticky top-0 z-20 flex h-16 items-center gap-3 border-b border-line bg-canvas/90 px-4 backdrop-blur-xl md:px-8">
+        <div className="sticky top-0 z-20 flex h-16 items-center gap-3 border-b border-white/8 bg-canvas/65 px-4 backdrop-blur-2xl md:px-8">
           <button
             onClick={() => setMobileOpen(true)}
             className="grid size-10 place-items-center rounded-xl border border-line bg-panel text-muted lg:hidden"

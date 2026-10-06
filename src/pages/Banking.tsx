@@ -44,7 +44,7 @@ export function AccountsPage() {
           </Button>
         }
       />
-      <Card className="overflow-hidden bg-sidebar p-6 text-white md:p-8">
+      <Card className="solid-card overflow-hidden p-6 text-white md:p-8">
         <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
             <p className="text-xs font-bold uppercase tracking-widest text-sidebar-muted">

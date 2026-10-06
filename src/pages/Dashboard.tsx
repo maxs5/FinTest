@@ -174,7 +174,7 @@ export default function Dashboard({ onTransfer }: { onTransfer: () => void }) {
           </div>
         </Card>
 
-        <Card className="relative overflow-hidden bg-sidebar p-6 text-white">
+        <Card className="solid-card relative overflow-hidden p-6 text-white">
           <div className="absolute -right-16 -top-20 size-56 rounded-full border-[28px] border-white/5" />
           <div className="relative flex h-full min-h-96 flex-col">
             <div className="flex items-start justify-between">
