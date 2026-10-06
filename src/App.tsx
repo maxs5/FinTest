@@ -102,9 +102,7 @@ function pageFromHash(hash: string): PageId {
 }
 
 function usePageNavigation(): [PageId, (page: PageId) => void] {
-  const [page, setPage] = useState<PageId>(() =>
-    pageFromHash(window.location.hash),
-  )
+  const [page, setPage] = useState<PageId>(() => pageFromHash(window.location.hash))
 
   useEffect(() => {
     const handleHashChange = () => setPage(pageFromHash(window.location.hash))
@@ -168,9 +166,7 @@ class AppErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState>
           <div className="mx-auto grid size-12 place-items-center rounded-2xl bg-danger-soft text-danger">
             <AlertTriangle size={24} />
           </div>
-          <h1 className="mt-5 font-display text-2xl font-semibold">
-            Something went wrong
-          </h1>
+          <h1 className="mt-5 font-display text-2xl font-semibold">Something went wrong</h1>
           <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-muted">
             FinTest recovered the application shell. Retry the current view before refreshing
             the entire page.
