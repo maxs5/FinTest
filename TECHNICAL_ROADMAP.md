@@ -14,12 +14,13 @@ README.md is the product summary. This file is the operational development roadm
 
 ## 2. Current state
 
-CURRENT STAGE: 01 — GitHub Repository
+CURRENT STAGE: 02 — Vercel Project
 
 - [x] Repository, main branch, README, ignore rules and baseline exist.
 - [x] React/Vite/Tailwind presentation interface exists.
 - [x] Synthetic banking and QA Workspace screens exist.
-- [ ] Vercel project verification.
+- [x] Vercel project connected to GitHub and Production deployment verified.
+- [ ] Preview deployment verification.
 - [ ] Backend/API.
 - [ ] PostgreSQL.
 - [ ] Persistent authentication.
@@ -50,7 +51,7 @@ PLAN → IMPLEMENT → VERIFY → TEST → DOCUMENT → COMPLETE → NEXT
 
 ### Foundation
 - [x] 01 — GitHub Repository
-- [ ] 02 — Vercel Project — connect GitHub and verify free Preview/Production deployment.
+- [ ] 02 — Vercel Project — GitHub connection and Production deployment verified; Preview verification in progress.
 - [ ] 03 — Monorepo Foundation — introduce apps/packages/database/docs/tests only when needed.
 - [ ] 04 — TypeScript and Tooling — strict checks, formatting, linting and reproducible scripts.
 - [ ] 05 — Frontend Foundation — routing, shared UI, API client, loading/error/empty states.
@@ -197,7 +198,7 @@ Branch names:
 - chore/<name>
 - docs/<name>
 
-Current branch: docs/technical-roadmap
+Current branch: chore/verify-vercel
 
 This branch contains only the requested roadmap. main must not be modified directly.
 
@@ -214,6 +215,6 @@ Before changing code:
 If repository state contradicts this roadmap, inspect the code first. Do not invent status.
 
 ## 13. Next action
-NEXT STAGE: 02 — Vercel Project
+NEXT ACTION: Verify a Preview deployment for this branch, then complete stage 02.
 
 Do not start backend, database or new fintech functionality until stage 02 and the required foundation stages are verified in order.
