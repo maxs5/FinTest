@@ -46,7 +46,11 @@ export type PageId =
   | "environments"
   | "reports"
 
-type NavItem = { id: PageId; label: string; icon: LucideIcon }
+type NavItem = {
+  id: PageId
+  label: string
+  icon: LucideIcon
+}
 
 const bankNav: NavItem[] = [
   { id: "overview", label: "Overview", icon: CircleGauge },
