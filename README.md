@@ -29,6 +29,8 @@ The current frontend remains at the repository root while the architecture is st
 
 pnpm-workspace.yaml now defines the root application and future apps/* and packages/* workspace boundaries. Real packages are added only when they have a consumer; empty placeholder packages are forbidden.
 
+Database migrations live under database/migrations and are executed explicitly with pnpm db:migrate. The migration runner keeps a checksum history in public.schema_migrations and never runs automatically as part of a normal Vercel build.
+
 ## Status
 
 | Stage | Status |
@@ -40,15 +42,15 @@ pnpm-workspace.yaml now defines the root application and future apps/* and packa
 | 05 — Frontend Foundation | Complete |
 | 06 — Backend/API Foundation | Complete |
 | 07 — PostgreSQL Connection | Complete |
-| 08 — Environment Configuration | In progress |
-| 09–45 | Not started |
+| 08 — Environment Configuration | Complete |
+| 09 — Database Migrations | In progress |
+| 10–45 | Not started |
 
-The current UI is still a synthetic presentation layer. Stage 05 is complete with stable client-side navigation, lazy page loading, an application-level error boundary, and accessible loading semantics. Stage 06 is complete with the first Vercel-compatible REST endpoint. Stage 07 adds the PostgreSQL connection foundation and a database health endpoint. Stage 08 centralizes server configuration and documents the environment contract; real domain persistence remains out of scope until migrations and schema stages.
+The current UI is still a synthetic presentation layer. Stages 05–08 established the frontend, API, PostgreSQL connection, and environment boundaries. Stage 09 adds versioned database migration infrastructure; real fintech domain tables remain out of scope until Stage 10.
 
 ## Development
 
 Requirements: Node 22 and pnpm 10.34.3.
-
 
 pnpm install
 pnpm dev
@@ -60,6 +62,7 @@ pnpm format:check
 pnpm typecheck
 pnpm check
 pnpm build
+pnpm db:migrate
 
 The production build runs typecheck, format check, lint, and then Vite build. These quality gates have been verified on Vercel.
 
