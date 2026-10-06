@@ -75,7 +75,9 @@ function Brand() {
     <div className="flex items-center gap-3 px-3">
       <div className="relative grid size-9 place-items-center rounded-xl bg-accent text-sidebar">
         <span className="font-display text-lg font-black">F</span>
-        <span\n          className="absolute -right-0.5 -top-0.5 size-2.5 rounded-full border-2 border-sidebar bg-accent"\n        />
+        <span
+          className="absolute -right-0.5 -top-0.5 size-2.5 rounded-full border-2 border-sidebar bg-accent"
+        />
       </div>
       <div>
         <p className="font-display text-lg font-bold tracking-tight text-white">
@@ -166,7 +168,9 @@ export function AppShell({
         </div>
 
         <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-2">
-          <button\n            className="flex w-full items-center gap-3 rounded-lg px-2 py-2 text-left text-white hover:bg-white/5"\n          >
+          <button
+            className="flex w-full items-center gap-3 rounded-lg px-2 py-2 text-left text-white hover:bg-white/5"
+          >
             <div className="grid size-8 place-items-center rounded-lg bg-accent/20 text-accent">
               <ShieldCheck size={17} />
             </div>
@@ -197,7 +201,9 @@ export function AppShell({
           onClick={onSignOut}
           className="mt-auto flex items-center gap-3 rounded-xl border border-white/10 p-2 text-left transition hover:bg-white/5"
         >
-          <div\n            className="grid size-9 place-items-center rounded-lg bg-purple-soft font-display text-xs font-bold text-purple"\n          >
+          <div
+            className="grid size-9 place-items-center rounded-lg bg-purple-soft font-display text-xs font-bold text-purple"
+          >
             AL
           </div>
           <div className="min-w-0 flex-1">
@@ -219,7 +225,9 @@ export function AppShell({
       )}
 
       <div className="lg:pl-72">
-        <div\n          className="sticky top-0 z-20 flex h-16 items-center gap-3 border-b border-line bg-white/80 px-4 backdrop-blur-2xl md:px-8"\n        >
+        <div
+          className="sticky top-0 z-20 flex h-16 items-center gap-3 border-b border-line bg-white/80 px-4 backdrop-blur-2xl md:px-8"
+        >
           <button
             onClick={() => setMobileOpen(true)}
             className="grid size-10 place-items-center rounded-xl border border-line bg-panel text-muted lg:hidden"
@@ -239,7 +247,9 @@ export function AppShell({
             </span>
           </div>
           <div className="ml-auto flex items-center gap-2">
-            <div\n              className="hidden items-center gap-2 rounded-full bg-success-soft px-3 py-2 text-xs font-bold text-success sm:flex"\n            >
+            <div
+              className="hidden items-center gap-2 rounded-full bg-success-soft px-3 py-2 text-xs font-bold text-success sm:flex"
+            >
               <span className="size-1.5 rounded-full bg-success" />
               All systems operational
             </div>
