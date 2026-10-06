@@ -1,5 +1,6 @@
 {
-  "description": "Delivers a modular, maintainable full-stack web app designed for seamless scalability and easy collaboration, ensuring robust production-ready solutions.",
+  "title": "FinTest — QA Banking Lab",
+  "description": "A complete digital banking experience and connected QA workspace for requirements, tests, defects, and releases.",
   "robots": {
     "index": false
   },

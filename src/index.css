@@ -1,1 +1,79 @@
-@import 'tailwindcss';
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", sans-serif;
+  --font-display: "Newsreader", serif;
+  --font-mono: "DM Mono", monospace;
+
+  --color-canvas: #f4f6f2;
+  --color-white: #ffffff;
+  --color-ink: #17221e;
+  --color-ink-soft: #263b34;
+  --color-muted: #6d7974;
+  --color-line: #e2e7e3;
+  --color-line-strong: #cad2cd;
+  --color-sidebar: #10221c;
+  --color-sidebar-text: #afbeb8;
+  --color-sidebar-muted: #758982;
+  --color-accent: #b6f25c;
+  --color-accent-strong: #477d13;
+  --color-mint: #e5f8ca;
+  --color-success: #238354;
+  --color-success-soft: #e2f5ea;
+  --color-warning: #a36212;
+  --color-warning-soft: #fff0d3;
+  --color-danger: #b64545;
+  --color-danger-soft: #fbe5e5;
+  --color-info: #356da8;
+  --color-info-soft: #e4effb;
+  --color-purple: #7250a3;
+  --color-purple-soft: #eee8f8;
+  --color-code: #101816;
+  --color-code-text: #b6f25c;
+  --color-code-muted: #779087;
+
+  --shadow-card: 0 1px 2px rgb(16 34 28 / 0.04), 0 8px 24px rgb(16 34 28 / 0.03);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-canvas);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-canvas);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  color: var(--color-sidebar);
+  background: var(--color-accent);
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

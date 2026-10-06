@@ -44,8 +44,36 @@ introduced at stage 3 rather than prematurely.
 
 | Stage | Status | Notes |
 | --- | --- | --- |
-| 01 — GitHub Repository | In progress | Documentation and ignore rules are present. A GitHub remote and the clean committed baseline still require verification. |
+| 01 — GitHub Repository | Complete | GitHub remote, documentation, ignore rules, committed baseline, and push are verified. |
 | 02–45 | Not started | Work must not begin until the previous stage meets its Definition of Done. |
+
+## Presentation interface
+
+The repository includes a complete interactive frontend concept backed by
+typed synthetic data. It is intended for stakeholder demonstrations while the
+production API and PostgreSQL vertical slices are implemented sequentially.
+
+Available banking experiences:
+
+- responsive application shell and global navigation;
+- sign-in and account creation;
+- balance overview, cash-flow insights, and recent activity;
+- multi-currency accounts and transaction search;
+- transfer review and completion flow;
+- card freeze/unfreeze controls and spending limits;
+- merchant payments and live currency exchange.
+
+Available QA workspace experiences:
+
+- release confidence and execution dashboard;
+- requirements, test cases, and releases;
+- test runs and defect lifecycle views;
+- API playground with request and response states;
+- logical environment health and quality reports.
+
+All displayed people, balances, transactions, environments, and quality
+signals are synthetic. The presentation interface does not yet persist data or
+perform real financial operations.
 
 ## Local development
 
