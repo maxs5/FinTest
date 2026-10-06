@@ -77,7 +77,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
     return value?.replace(/[^a-zA-Z0-9_-]/g, "") || ""
   }
   function escapeHtmlText(value: string): string {
-    return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    return value\n      .replace(/&/g, "&amp;")\n      .replace(/</g, "&lt;")\n      .replace(/>/g, "&gt;")
   }
   function replaceHtmlCommentSlot(html: string, slotName: string, content: string): string {
     return html.replace(`<!-- ${slotName} -->`, content)
