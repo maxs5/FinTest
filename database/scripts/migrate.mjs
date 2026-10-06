@@ -36,13 +36,12 @@ async function loadMigrations() {
       )
     }
 
-    const [, order, description] = match
+    const [, order] = match
     const content = await readFile(join(migrationsDirectory, entry.name), "utf8")
 
     migrations.push({
       id: entry.name.slice(0, -4),
       order,
-      description,
       content,
       checksum: createHash("sha256").update(content).digest("hex"),
     })
@@ -83,10 +82,7 @@ async function migrate() {
 
   try {
     await client.query("BEGIN")
-    await client.query(
-      "SELECT pg_advisory_xact_lock(hashtext($1))",
-      [migrationLockName],
-    )
+    await client.query("SELECT pg_advisory_xact_lock(hashtext($1))", [migrationLockName])
 
     const metadataExists = await client.query(
       "SELECT to_regclass('public.schema_migrations') AS table_name",
