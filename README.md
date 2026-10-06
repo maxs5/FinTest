@@ -44,7 +44,7 @@ introduced at stage 3 rather than prematurely.
 
 | Stage | Status | Notes |
 | --- | --- | --- |
-| 01 — GitHub Repository | In progress | Documentation and ignore rules are present. A GitHub remote and the clean committed baseline still require verification. |
+| 01 — GitHub Repository | Complete | GitHub remote, documentation, ignore rules, committed baseline, and push are verified. |
 | 02–45 | Not started | Work must not begin until the previous stage meets its Definition of Done. |
 
 ## Local development
