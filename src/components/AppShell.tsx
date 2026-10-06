@@ -59,7 +59,7 @@ function Brand() {
     <div className="flex items-center gap-3 px-3">
       <div className="relative grid size-9 place-items-center rounded-xl bg-accent text-sidebar">
         <span className="font-display text-lg font-black">F</span>
-        <span className="absolute -right-0.5 -top-0.5 size-2.5 rounded-full border-2 border-sidebar bg-white" />
+        <span className="absolute -right-0.5 -top-0.5 size-2.5 rounded-full border-2 border-sidebar bg-accent" />
       </div>
       <div>
         <p className="font-display text-lg font-bold tracking-tight text-white">
@@ -96,7 +96,7 @@ function NavGroup({
             onClick={() => onSelect(id)}
             className={`flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-medium transition ${
               active === id
-                ? "bg-white text-sidebar shadow-sm"
+                ? "bg-gradient-to-r from-accent to-purple text-white shadow-lg shadow-accent/10"
                 : "text-sidebar-text hover:bg-white/8 hover:text-white"
             }`}
           >
@@ -206,7 +206,7 @@ export function AppShell({
         <div className="sticky top-0 z-20 flex h-16 items-center gap-3 border-b border-line bg-canvas/90 px-4 backdrop-blur-xl md:px-8">
           <button
             onClick={() => setMobileOpen(true)}
-            className="grid size-10 place-items-center rounded-xl border border-line bg-white text-muted lg:hidden"
+            className="grid size-10 place-items-center rounded-xl border border-line bg-panel text-muted lg:hidden"
             aria-label="Open navigation"
           >
             <Menu size={20} />
@@ -218,7 +218,7 @@ export function AppShell({
               placeholder="Search accounts, tests, bugs…"
               aria-label="Global search"
             />
-            <span className="rounded-md border border-line bg-white px-2 py-1 text-[10px] font-semibold">
+            <span className="rounded-md border border-line bg-panel px-2 py-1 text-[10px] font-semibold">
               ⌘ K
             </span>
           </div>

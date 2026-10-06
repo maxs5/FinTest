@@ -336,7 +336,7 @@ export function TransferPage() {
             </div>
             <div className="flex-1 px-4">
               <div className="h-px bg-line" />
-              <div className="mx-auto -mt-4 grid size-8 place-items-center rounded-full border border-line bg-white">
+              <div className="mx-auto -mt-4 grid size-8 place-items-center rounded-full border border-line bg-panel">
                 <ArrowRight size={15} />
               </div>
             </div>

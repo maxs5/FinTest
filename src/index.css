@@ -3,37 +3,39 @@
 
 @theme {
   --font-sans: "Manrope", sans-serif;
-  --font-display: "Newsreader", serif;
+  --font-display: "Manrope", sans-serif;
   --font-mono: "DM Mono", monospace;
 
-  --color-canvas: #f4f6f2;
+  --color-canvas: #181a20;
   --color-white: #ffffff;
-  --color-ink: #17221e;
-  --color-ink-soft: #263b34;
-  --color-muted: #6d7974;
-  --color-line: #e2e7e3;
-  --color-line-strong: #cad2cd;
-  --color-sidebar: #10221c;
-  --color-sidebar-text: #afbeb8;
-  --color-sidebar-muted: #758982;
-  --color-accent: #b6f25c;
-  --color-accent-strong: #477d13;
-  --color-mint: #e5f8ca;
-  --color-success: #238354;
-  --color-success-soft: #e2f5ea;
-  --color-warning: #a36212;
-  --color-warning-soft: #fff0d3;
-  --color-danger: #b64545;
-  --color-danger-soft: #fbe5e5;
-  --color-info: #356da8;
-  --color-info-soft: #e4effb;
-  --color-purple: #7250a3;
-  --color-purple-soft: #eee8f8;
-  --color-code: #101816;
-  --color-code-text: #b6f25c;
-  --color-code-muted: #779087;
+  --color-panel: #22252d;
+  --color-panel-raised: #2a2e38;
+  --color-ink: #f3f5f9;
+  --color-ink-soft: #d8dde7;
+  --color-muted: #9299a8;
+  --color-line: #343842;
+  --color-line-strong: #474c59;
+  --color-sidebar: #121419;
+  --color-sidebar-text: #a3aab8;
+  --color-sidebar-muted: #6f7786;
+  --color-accent: #438df6;
+  --color-accent-strong: #78adff;
+  --color-mint: #213552;
+  --color-success: #54d698;
+  --color-success-soft: #20382f;
+  --color-warning: #f1bc55;
+  --color-warning-soft: #3b3222;
+  --color-danger: #f07883;
+  --color-danger-soft: #40262d;
+  --color-info: #64b9ff;
+  --color-info-soft: #203649;
+  --color-purple: #a28bff;
+  --color-purple-soft: #322c50;
+  --color-code: #101217;
+  --color-code-text: #8fbaff;
+  --color-code-muted: #758095;
 
-  --shadow-card: 0 1px 2px rgb(16 34 28 / 0.04), 0 8px 24px rgb(16 34 28 / 0.03);
+  --shadow-card: 0 1px 0 rgb(255 255 255 / 0.035) inset, 0 12px 32px rgb(0 0 0 / 0.2);
 }
 
 * {
@@ -41,7 +43,9 @@
 }
 
 html {
-  background: var(--color-canvas);
+  background:
+    radial-gradient(circle at 85% -10%, rgb(87 94 119 / 0.16), transparent 32rem),
+    var(--color-canvas);
 }
 
 body {
@@ -76,4 +80,17 @@ button {
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+.card-gradient {
+  background:
+    radial-gradient(circle at 88% 16%, rgb(136 229 248 / 0.95), transparent 19%),
+    radial-gradient(circle at 72% 52%, rgb(76 120 255 / 0.95), transparent 32%),
+    linear-gradient(135deg, #222833 5%, #3c49ae 58%, #9678ff 100%);
+}
+
+.panel-highlight {
+  background:
+    linear-gradient(120deg, rgb(255 255 255 / 0.06), transparent 45%),
+    var(--color-panel);
 }

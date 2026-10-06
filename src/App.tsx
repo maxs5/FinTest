@@ -4,31 +4,45 @@ import AuthPage from "./pages/Auth"
 import Dashboard from "./pages/Dashboard"
 
 const AccountsPage = lazy(() =>
-  import("./pages/Banking").then((module) => ({ default: module.AccountsPage })),
+  import("./pages/Banking").then((module) => ({
+    default: module.AccountsPage,
+  })),
 )
 const CardsPage = lazy(() =>
   import("./pages/Banking").then((module) => ({ default: module.CardsPage })),
 )
 const ExchangePage = lazy(() =>
-  import("./pages/Banking").then((module) => ({ default: module.ExchangePage })),
+  import("./pages/Banking").then((module) => ({
+    default: module.ExchangePage,
+  })),
 )
 const PaymentsPage = lazy(() =>
-  import("./pages/Banking").then((module) => ({ default: module.PaymentsPage })),
+  import("./pages/Banking").then((module) => ({
+    default: module.PaymentsPage,
+  })),
 )
 const TransactionsPage = lazy(() =>
-  import("./pages/Banking").then((module) => ({ default: module.TransactionsPage })),
+  import("./pages/Banking").then((module) => ({
+    default: module.TransactionsPage,
+  })),
 )
 const TransferPage = lazy(() =>
-  import("./pages/Banking").then((module) => ({ default: module.TransferPage })),
+  import("./pages/Banking").then((module) => ({
+    default: module.TransferPage,
+  })),
 )
 const ApiPlayground = lazy(() =>
-  import("./pages/Quality").then((module) => ({ default: module.ApiPlayground })),
+  import("./pages/Quality").then((module) => ({
+    default: module.ApiPlayground,
+  })),
 )
 const BugsPage = lazy(() =>
   import("./pages/Quality").then((module) => ({ default: module.BugsPage })),
 )
 const EnvironmentsPage = lazy(() =>
-  import("./pages/Quality").then((module) => ({ default: module.EnvironmentsPage })),
+  import("./pages/Quality").then((module) => ({
+    default: module.EnvironmentsPage,
+  })),
 )
 const QADashboard = lazy(() =>
   import("./pages/Quality").then((module) => ({ default: module.QADashboard })),
@@ -37,10 +51,14 @@ const ReportsPage = lazy(() =>
   import("./pages/Quality").then((module) => ({ default: module.ReportsPage })),
 )
 const TestRunsPage = lazy(() =>
-  import("./pages/Quality").then((module) => ({ default: module.TestRunsPage })),
+  import("./pages/Quality").then((module) => ({
+    default: module.TestRunsPage,
+  })),
 )
 const WorkspaceList = lazy(() =>
-  import("./pages/Quality").then((module) => ({ default: module.WorkspaceList })),
+  import("./pages/Quality").then((module) => ({
+    default: module.WorkspaceList,
+  })),
 )
 
 function PageLoader() {
@@ -48,7 +66,9 @@ function PageLoader() {
     <div className="grid min-h-[60vh] place-items-center">
       <div className="text-center">
         <div className="mx-auto size-9 animate-spin rounded-full border-2 border-line border-t-accent-strong" />
-        <p className="mt-3 text-sm font-semibold text-muted">Loading workspace…</p>
+        <p className="mt-3 text-sm font-semibold text-muted">
+          Loading workspace…
+        </p>
       </div>
     </div>
   )

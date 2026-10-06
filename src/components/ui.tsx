@@ -11,9 +11,10 @@ export function Button({
   variant?: "primary" | "secondary" | "ghost" | "danger"
 }) {
   const variants = {
-    primary: "bg-ink text-white hover:bg-ink-soft shadow-sm",
-    secondary: "border border-line bg-white text-ink hover:bg-canvas",
-    ghost: "text-muted hover:bg-black/5 hover:text-ink",
+    primary:
+      "bg-accent text-white hover:bg-accent/85 shadow-sm shadow-accent/20",
+    secondary: "border border-line bg-panel text-ink hover:bg-panel-raised",
+    ghost: "text-muted hover:bg-white/5 hover:text-ink",
     danger: "bg-danger-soft text-danger hover:bg-danger-soft/70",
   }
 
@@ -40,7 +41,7 @@ export function IconButton({
     <button
       aria-label={label}
       title={label}
-      className={`grid size-10 place-items-center rounded-xl border border-line bg-white text-muted transition hover:border-line-strong hover:text-ink focus:outline-none focus:ring-4 focus:ring-mint/40 ${className}`}
+      className={`grid size-10 place-items-center rounded-xl border border-line bg-panel text-muted transition hover:border-line-strong hover:bg-panel-raised hover:text-ink focus:outline-none focus:ring-4 focus:ring-mint/40 ${className}`}
       {...props}
     >
       {children}
@@ -57,7 +58,7 @@ export function Card({
 }) {
   return (
     <section
-      className={`rounded-2xl border border-line bg-white shadow-card ${className}`}
+      className={`rounded-2xl border border-line bg-panel shadow-card ${className}`}
     >
       {children}
     </section>
@@ -182,7 +183,7 @@ export function Field({
 }
 
 export const inputClass =
-  "w-full rounded-xl border border-line bg-white px-3.5 py-3 text-sm text-ink outline-none transition placeholder:text-muted/60 focus:border-accent focus:ring-4 focus:ring-mint/40"
+  "w-full rounded-xl border border-line bg-panel-raised px-3.5 py-3 text-sm text-ink outline-none transition placeholder:text-muted/60 focus:border-accent focus:ring-4 focus:ring-mint/40"
 
 export function EmptyState({
   icon: Icon,

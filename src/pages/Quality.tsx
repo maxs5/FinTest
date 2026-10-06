@@ -139,7 +139,7 @@ export function QADashboard() {
             Execution results
           </h2>
           <div className="mx-auto mt-7 grid size-44 place-items-center rounded-full bg-[conic-gradient(var(--color-success)_0_78%,var(--color-warning)_78%_88%,var(--color-danger)_88%_94%,var(--color-line)_94%_100%)]">
-            <div className="grid size-32 place-items-center rounded-full bg-white text-center">
+            <div className="grid size-32 place-items-center rounded-full bg-panel text-center">
               <div>
                 <p className="font-display text-3xl font-semibold">258</p>
                 <p className="text-xs font-semibold text-muted">total tests</p>
