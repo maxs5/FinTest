@@ -82,7 +82,10 @@ async function migrate() {
 
   try {
     await client.query("BEGIN")
-    await client.query("SELECT pg_advisory_xact_lock(hashtext($1))", [migrationLockName])
+    await client.query(
+      "SELECT pg_advisory_xact_lock(hashtext($1))",
+      [migrationLockName],
+    )
 
     const metadataExists = await client.query(
       "SELECT to_regclass('public.schema_migrations') AS table_name",
