@@ -28,23 +28,7 @@ import {
 import { useState, type ReactNode } from "react"
 import { IconButton } from "./ui"
 
-export type PageId =
-  | "overview"
-  | "accounts"
-  | "activity"
-  | "transfer"
-  | "cards"
-  | "payments"
-  | "exchange"
-  | "qa-dashboard"
-  | "requirements"
-  | "test-cases"
-  | "test-runs"
-  | "bugs"
-  | "releases"
-  | "api"
-  | "environments"
-  | "reports"
+export type PageId = "overview" | "accounts" | "activity" | "transfer" | "cards" | "payments" | "exchange" | "qa-dashboard" | "requirements" | "test-cases" | "test-runs" | "bugs" | "releases" | "api" | "environments" | "reports"
 
 type NavItem = {
   id: PageId
