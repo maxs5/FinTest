@@ -2,13 +2,13 @@
 
 ## Current state
 
-CURRENT STAGE: 04 — TypeScript and Tooling
+CURRENT STAGE: 05 — Frontend Foundation
 
 - [x] 01 — GitHub Repository
 - [x] 02 — Vercel Project
 - [x] 03 — Monorepo Foundation (workspace boundaries established)
 - [x] 04 — TypeScript and Tooling (typecheck, formatting, and lint checks pass on Vercel)
-- [ ] 05 — Frontend Foundation
+- [~] 05 — Frontend Foundation
 - [ ] 06 — Backend/API Foundation
 - [ ] 07 — PostgreSQL Connection
 - [ ] 08 — Environment Configuration
@@ -95,10 +95,17 @@ Current working branch: chore/monorepo-foundation
 
 All work must use a new branch. main is never edited directly.
 
+## Stage 05 scope
+
+- Stable client-side navigation based on URL hashes so a selected workspace page survives refresh.
+- Central page validity checks so unknown hashes fall back to Overview.
+- Lazy loading remains the default for larger Banking and QA page groups.
+- A root React error boundary prevents an isolated render failure from leaving a blank application shell.
+- Loading state is exposed with accessible status semantics.
+- No new runtime dependency is introduced in this stage.
+
+Stage 05 is not complete until the full Vercel quality gate passes: typecheck, format check, lint and production build.
+
 ## Next
 
-Stage 04 — TypeScript and Tooling.
-
-Implemented now: strict TypeScript compiler checks, reproducible typecheck, format-check and build-gating scripts. Lint is intentionally not marked complete until its dependency is added with a reproducible lockfile update.
-
-Do not start backend development until Stage 04 is complete.
+Finish Stage 05 verification, then proceed to Stage 06 — Backend/API Foundation.
