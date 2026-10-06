@@ -36,10 +36,11 @@ pnpm-workspace.yaml now defines the root application and future apps/* and packa
 | 01 — GitHub Repository | Complete |
 | 02 — Vercel Project | Complete |
 | 03 — Monorepo Foundation | Complete |
-| 04 — TypeScript and Tooling | In progress |
-| 05–45 | Not started |
+| 04 — TypeScript and Tooling | Complete |
+| 05 — Frontend Foundation | In progress |
+| 06–45 | Not started |
 
-The current UI is a presentation prototype with typed synthetic data. It does not yet persist data or perform real financial operations.
+The current UI is still a synthetic presentation layer. Stage 05 now provides stable client-side navigation, lazy page loading, and an application-level error boundary; persistence and real financial operations remain out of scope until the backend stages.
 
 ## Development
 
@@ -57,7 +58,7 @@ pnpm typecheck
 pnpm check
 pnpm build
 
-The production build runs TypeScript checking before Vite build. Linting is not yet enabled; it will be added with a reproducible lockfile update.
+The production build runs typecheck, format check, lint, and then Vite build. These quality gates have been verified on Vercel.
 
 Do not commit environment files, credentials, tokens, private keys, build output, logs or platform-local state.
 
