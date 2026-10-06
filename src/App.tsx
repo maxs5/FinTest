@@ -128,7 +128,9 @@ function PageLoader() {
     >
       <div className="text-center">
         <div className="mx-auto size-9 animate-spin rounded-full border-2 border-line border-t-accent-strong" />
-        <p className="mt-3 text-sm font-semibold text-muted">Loading workspace…</p>
+        <p className="mt-3 text-sm font-semibold text-muted">
+          Loading workspace…
+        </p>
       </div>
     </div>
   )
