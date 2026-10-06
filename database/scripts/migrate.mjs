@@ -37,7 +37,10 @@ async function loadMigrations() {
     }
 
     const [, order] = match
-    const content = await readFile(join(migrationsDirectory, entry.name), "utf8")
+    const content = await readFile(
+      join(migrationsDirectory, entry.name),
+      "utf8",
+    )
 
     migrations.push({
       id: entry.name.slice(0, -4),
