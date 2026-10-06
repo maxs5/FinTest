@@ -1,141 +1,76 @@
 # FinTest
 
-FinTest is a fictional digital bank and a QA playground. It is designed for
-manual, API, database, security, performance, and automated testing without
-real money or payment credentials.
+FinTest is a fictional digital bank and QA playground for manual, API, database, security, performance, and automated testing without real money.
 
-The product specification in
-[`src/imports/FinTest_Full_Project_Specification_Vercel.pdf`](src/imports/FinTest_Full_Project_Specification_Vercel.pdf)
-is the source of truth. Development follows its 45 stages in order and uses
-small, verified vertical slices.
+## Product
 
-## Product scope
-
-- Digital banking: authentication, accounts, transactions, transfers, cards,
-  simulated payments, currency exchange, and notifications.
-- QA workspace: requirements, test cases, checklists, test runs, defects,
-  releases, test data, logical environments, API playground, logs, and reports.
+- Digital banking: authentication, accounts, transactions, transfers, cards, simulated payments, exchange and notifications.
+- QA Workspace: requirements, test cases, checklists, test runs, bugs, releases, test data, environments, API playground, logs and reports.
 - Traceability: Requirement → Test → Run → Bug → Release.
-- Reproducible defect scenarios through a controlled Bug Engine.
+- Controlled reproducible defects through the Bug Engine.
 
-No real funds, production banking data, or real payment credentials are used.
+All displayed banking and QA data is synthetic.
 
 ## Architecture
 
-- **Frontend:** React 19 and TypeScript.
-- **Styling:** Tailwind CSS 4.
-- **Build:** Vite 8.
-- **Backend target:** Node.js/TypeScript Vercel-compatible REST API with
-  OpenAPI.
-- **Database target:** PostgreSQL with migrations and deterministic seed data.
-- **Deployment target:** GitHub → Vercel Preview → QA → Production
-  (`PROD-SIM`).
+- React 19 + TypeScript
+- Tailwind CSS 4
+- Vite 8
+- Node.js/TypeScript Vercel-compatible REST API
+- PostgreSQL
+- GitHub → Vercel Preview → Production (PROD-SIM)
+- Modular monolith first
 
-The system starts as a modular monolith. Financial rules belong to backend
-services, protected resources require object-level authorization, money is
-handled with exact arithmetic, and critical state changes are atomic and
-idempotent.
+Financial rules belong in backend services. Protected resources require backend authorization. Money uses exact arithmetic. Critical state changes are atomic and idempotent.
 
-The repository currently uses the Figma Make React/Vite scaffold. The target
-module boundaries (`apps`, `packages`, `database`, `docs`, and `tests`) will be
-introduced at stage 3 rather than prematurely.
+## Repository structure
 
-## Current status
+The current frontend remains at the repository root while the architecture is stabilized.
 
-| Stage | Status | Notes |
-| --- | --- | --- |
-| 01 — GitHub Repository | Complete | GitHub remote, documentation, ignore rules, committed baseline, and push are verified. |
-| 02–45 | Not started | Work must not begin until the previous stage meets its Definition of Done. |
+pnpm-workspace.yaml now defines the root application and future apps/* and packages/* workspace boundaries. Real packages are added only when they have a consumer; empty placeholder packages are forbidden.
 
-## Presentation interface
+## Status
 
-The repository includes a complete interactive frontend concept backed by
-typed synthetic data. It is intended for stakeholder demonstrations while the
-production API and PostgreSQL vertical slices are implemented sequentially.
+| Stage | Status |
+| --- | --- |
+| 01 — GitHub Repository | Complete |
+| 02 — Vercel Project | Complete |
+| 03 — Monorepo Foundation | Complete |
+| 04–45 | Not started |
 
-Available banking experiences:
+The current UI is a presentation prototype with typed synthetic data. It does not yet persist data or perform real financial operations.
 
-- responsive application shell and global navigation;
-- sign-in and account creation;
-- balance overview, cash-flow insights, and recent activity;
-- multi-currency accounts and transaction search;
-- transfer review and completion flow;
-- card freeze/unfreeze controls and spending limits;
-- merchant payments and live currency exchange.
+## Development
 
-Available QA workspace experiences:
+Requirements: Node 22 and pnpm 10.34.3.
 
-- release confidence and execution dashboard;
-- requirements, test cases, and releases;
-- test runs and defect lifecycle views;
-- API playground with request and response states;
-- logical environment health and quality reports.
 
-All displayed people, balances, transactions, environments, and quality
-signals are synthetic. The presentation interface does not yet persist data or
-perform real financial operations.
-
-## Local development
-
-Requirements are defined in [`.mise.toml`](.mise.toml). Install dependencies
-with:
-
-```bash
 pnpm install
-```
-
-In Figma Make, the Vite development server is managed by the platform and must
-not be started manually. Outside that environment:
-
-```bash
 pnpm dev
-```
 
-Available checks:
+Checks currently available:
 
-```bash
 pnpm format
 pnpm build
-```
 
-Do not commit `.env` files, credentials, tokens, private keys, generated build
-output, logs, or platform-local state.
+Do not commit environment files, credentials, tokens, private keys, build output, logs or platform-local state.
 
 ## Branch strategy
 
-- `main` is protected conceptually and represents the latest production-ready
-  state.
-- Create short-lived branches from the latest `main`:
-  - `feature/<short-name>` for product work;
-  - `fix/<short-name>` for defect fixes;
-  - `chore/<short-name>` for tooling and maintenance;
-  - `docs/<short-name>` for documentation-only changes.
-- Keep each branch focused on one stage or one small vertical slice.
-- Open a pull request into `main`; do not push feature work directly to
-  `main`.
-- The Vercel Preview deployment is the QA environment for a pull request.
-- Merge only after applicable formatting, type checking, tests, build, and QA
-  checks pass.
-- Use squash merging so `main` keeps one coherent commit per change.
-- Never force-push `main` or bypass failing quality gates.
+- main is production-ready baseline.
+- Use feature/*, fix/*, chore/*, or docs/*.
+- Work starts from the latest main.
+- Open a pull request into main.
+- Never push feature work directly to main.
+- Vercel Preview is the QA deployment for pull requests.
+- Never bypass failing quality gates.
 
-## Delivery rules
+## Roadmap
 
-1. Inspect the repository and current diff before making changes.
-2. Complete stages sequentially; do not claim unverified work.
-3. Keep files modular and below the 1,500-line hard limit.
-4. Update this README when capabilities, architecture, setup, or workflows
-   change.
-5. Keep secrets in environment settings only.
-6. Do not add Docker or mandatory paid services without an explicit
-   architecture decision.
+See TECHNICAL_ROADMAP.md for the authoritative development state and next action.
 
 ## First vertical slice
 
-The first milestone will connect the complete path:
+React UI → register/login → GET /me → account → PostgreSQL → dashboard
 
-`React UI → register/login → GET /me → account → PostgreSQL → dashboard`
-
-It begins only after the repository, Vercel project, tooling, API foundation,
-database connection, configuration, migrations, and schema stages have each
-met their Definition of Done.
+It starts only after the foundation stages have been verified.
