@@ -14,8 +14,8 @@ export function Button({
     primary:
       "bg-accent text-white hover:bg-accent/85 shadow-sm shadow-accent/20",
     secondary:
-      "border border-white/10 bg-white/6 text-ink backdrop-blur-xl hover:bg-white/10",
-    ghost: "text-muted hover:bg-white/5 hover:text-ink",
+      "border border-line bg-white text-ink hover:border-line-strong hover:bg-panel-raised",
+    ghost: "text-muted hover:bg-black/5 hover:text-ink",
     danger: "bg-danger-soft text-danger hover:bg-danger-soft/70",
   }
 
@@ -42,7 +42,7 @@ export function IconButton({
     <button
       aria-label={label}
       title={label}
-      className={`grid size-10 place-items-center rounded-xl border border-white/10 bg-white/6 text-muted backdrop-blur-xl transition hover:border-white/20 hover:bg-white/10 hover:text-ink focus:outline-none focus:ring-4 focus:ring-mint/40 ${className}`}
+      className={`grid size-10 place-items-center rounded-xl border border-line bg-white text-muted transition hover:border-line-strong hover:bg-panel-raised hover:text-ink focus:outline-none focus:ring-4 focus:ring-mint/40 ${className}`}
       {...props}
     >
       {children}
@@ -184,7 +184,7 @@ export function Field({
 }
 
 export const inputClass =
-  "w-full rounded-xl border border-white/10 bg-white/7 px-3.5 py-3 text-sm text-ink outline-none backdrop-blur-xl transition placeholder:text-muted/60 focus:border-accent focus:ring-4 focus:ring-accent/15"
+  "w-full rounded-xl border border-line bg-white px-3.5 py-3 text-sm text-ink outline-none transition placeholder:text-muted/60 focus:border-accent focus:ring-4 focus:ring-accent/15"
 
 export function EmptyState({
   icon: Icon,

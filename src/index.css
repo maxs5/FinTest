@@ -6,38 +6,38 @@
   --font-display: "Manrope", sans-serif;
   --font-mono: "DM Mono", monospace;
 
-  --color-canvas: #242731;
+  --color-canvas: #f3f6fb;
   --color-white: #ffffff;
-  --color-panel: #303440;
-  --color-panel-raised: #393e4c;
-  --color-ink: #f7f8fb;
-  --color-ink-soft: #dfe3eb;
-  --color-muted: #aeb4c2;
-  --color-line: #454a58;
-  --color-line-strong: #5a6070;
-  --color-sidebar: #1b1e27;
-  --color-sidebar-text: #b3bac8;
-  --color-sidebar-muted: #858d9d;
-  --color-accent: #5b8cff;
-  --color-accent-strong: #a9c0ff;
-  --color-mint: #2b3b5a;
-  --color-success: #54d698;
-  --color-success-soft: #20382f;
-  --color-warning: #f1bc55;
-  --color-warning-soft: #3b3222;
-  --color-danger: #f07883;
-  --color-danger-soft: #40262d;
-  --color-info: #64b9ff;
-  --color-info-soft: #203649;
-  --color-purple: #a28bff;
-  --color-purple-soft: #322c50;
-  --color-code: #101217;
-  --color-code-text: #8fbaff;
-  --color-code-muted: #758095;
+  --color-panel: #ffffff;
+  --color-panel-raised: #f7f9fc;
+  --color-ink: #121826;
+  --color-ink-soft: #293247;
+  --color-muted: #727b8c;
+  --color-line: #e5e9f0;
+  --color-line-strong: #d3d9e3;
+  --color-sidebar: #071a3d;
+  --color-sidebar-text: #b8c4da;
+  --color-sidebar-muted: #7f90ad;
+  --color-accent: #3478f6;
+  --color-accent-strong: #265fcf;
+  --color-mint: #e9f1ff;
+  --color-success: #20ae7b;
+  --color-success-soft: #e7f8f1;
+  --color-warning: #d98c25;
+  --color-warning-soft: #fff3df;
+  --color-danger: #e75563;
+  --color-danger-soft: #feeaed;
+  --color-info: #3478f6;
+  --color-info-soft: #e9f1ff;
+  --color-purple: #7057d8;
+  --color-purple-soft: #eeeafe;
+  --color-code: #0b1731;
+  --color-code-text: #94b7ff;
+  --color-code-muted: #8190aa;
 
   --shadow-card:
-    0 1px 0 rgb(255 255 255 / 0.08) inset,
-    0 18px 44px rgb(9 11 17 / 0.18);
+    0 1px 2px rgb(17 30 56 / 0.04),
+    0 12px 32px rgb(17 30 56 / 0.07);
 }
 
 * {
@@ -46,9 +46,8 @@
 
 html {
   background:
-    radial-gradient(circle at 8% 4%, rgb(91 140 255 / 0.18), transparent 30rem),
-    radial-gradient(circle at 92% 8%, rgb(162 126 255 / 0.16), transparent 32rem),
-    radial-gradient(circle at 72% 92%, rgb(84 214 152 / 0.07), transparent 30rem),
+    radial-gradient(circle at 12% 0%, rgb(52 120 246 / 0.08), transparent 28rem),
+    radial-gradient(circle at 92% 6%, rgb(112 87 216 / 0.06), transparent 30rem),
     var(--color-canvas);
   background-attachment: fixed;
 }
@@ -88,25 +87,23 @@ button {
 }
 
 .glass-surface {
-  background:
-    linear-gradient(145deg, rgb(255 255 255 / 0.09), rgb(255 255 255 / 0.025)),
-    rgb(48 52 64 / 0.7);
-  border-color: rgb(255 255 255 / 0.1);
-  backdrop-filter: blur(22px) saturate(125%);
-  -webkit-backdrop-filter: blur(22px) saturate(125%);
+  background: rgb(255 255 255 / 0.94);
+  border-color: rgb(218 224 234 / 0.88);
+  backdrop-filter: blur(16px) saturate(115%);
+  -webkit-backdrop-filter: blur(16px) saturate(115%);
 }
 
 .card-gradient {
   background:
-    radial-gradient(circle at 88% 16%, rgb(162 231 255 / 0.86), transparent 19%),
-    radial-gradient(circle at 72% 52%, rgb(91 140 255 / 0.82), transparent 34%),
-    linear-gradient(135deg, #303743 5%, #4857b8 58%, #9279df 100%);
+    radial-gradient(circle at 88% 12%, rgb(117 220 255 / 0.9), transparent 22%),
+    radial-gradient(circle at 68% 56%, rgb(86 108 255 / 0.78), transparent 36%),
+    linear-gradient(135deg, #2d7bf5 5%, #3559d9 58%, #6c49ce 100%);
 }
 
 .panel-highlight {
   background:
-    linear-gradient(120deg, rgb(255 255 255 / 0.1), transparent 45%),
-    rgb(48 52 64 / 0.72);
+    linear-gradient(120deg, rgb(52 120 246 / 0.06), transparent 48%),
+    rgb(255 255 255 / 0.96);
 }
 
 .solid-card {

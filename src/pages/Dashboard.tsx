@@ -40,44 +40,52 @@ export default function Dashboard({ onTransfer }: { onTransfer: () => void }) {
       />
 
       <div className="grid gap-4 lg:grid-cols-[1.45fr_0.75fr]">
-        <Card className="card-gradient relative min-h-52 overflow-hidden border-white/10 p-6 text-white md:p-8">
-          <div className="relative z-10 max-w-sm">
-            <Badge tone="info">Smart insights</Badge>
-            <h2 className="mt-5 max-w-xs font-display text-3xl font-bold leading-tight">
-              Monitor your expenses with clarity
-            </h2>
-            <p className="mt-3 max-w-sm text-sm leading-6 text-white/70">
-              You spent 8.1% less than your monthly target. Keep the momentum.
+        <Card className="solid-card relative min-h-52 overflow-hidden border-white/10 p-6 text-white md:p-8">
+          <div className="relative z-10">
+            <p className="text-xs font-semibold text-sidebar-text">
+              Total balance
             </p>
-            <Button className="mt-5 bg-white text-sidebar hover:bg-white/90">
-              View insights <ArrowRight size={15} />
-            </Button>
+            <h2 className="mt-2 font-display text-4xl font-bold tracking-tight md:text-5xl">
+              €48,362.18
+            </h2>
+            <div className="mt-2 flex items-center gap-2 text-sm">
+              <span className="text-sidebar-text">+€1,245.20</span>
+              <span className="font-bold text-success">+2.8%</span>
+            </div>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <Button className="bg-white/10 text-white shadow-none hover:bg-white/15">
+                <Plus size={16} /> Deposit
+              </Button>
+              <Button onClick={onTransfer}>
+                <Send size={16} /> Transfer
+              </Button>
+            </div>
           </div>
-          <div className="absolute -bottom-20 -right-10 size-72 rounded-full bg-white/10 blur-2xl" />
-          <div className="absolute right-16 top-8 size-24 rotate-12 rounded-3xl border border-white/20 bg-white/10 shadow-2xl backdrop-blur-md" />
-          <div className="absolute bottom-8 right-8 grid size-20 -rotate-6 place-items-center rounded-full bg-warning text-2xl font-bold text-sidebar shadow-2xl">
-            €
-          </div>
+          <div className="absolute -right-20 -top-20 size-72 rounded-full border-[48px] border-accent/10" />
+          <div className="absolute bottom-5 right-7 size-24 rounded-full bg-accent/15 blur-xl" />
         </Card>
-        <Card className="panel-highlight flex min-h-52 flex-col justify-between overflow-hidden p-6">
+        <Card className="card-gradient flex min-h-52 flex-col justify-between overflow-hidden border-white/15 p-6 text-white">
           <div className="flex items-start justify-between">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted">
-                Your wallet
-              </p>
-              <p className="mt-2 text-sm text-muted">Available balance</p>
+              <p className="text-lg font-black italic tracking-tight">VISA</p>
+              <p className="mt-2 text-xs text-white/70">Everyday Debit</p>
             </div>
-            <div className="grid size-10 place-items-center rounded-full bg-accent text-white shadow-lg shadow-accent/30">
+            <div className="grid size-10 place-items-center rounded-full bg-white/15 text-white backdrop-blur-md">
               <Wallet size={18} />
             </div>
           </div>
           <div>
-            <p className="font-display text-4xl font-bold tracking-tight">
-              €48,362.18
+            <p className="font-mono text-sm tracking-[0.16em]">
+              4821 •••• •••• 8392
             </p>
-            <div className="mt-3 flex items-center gap-2">
-              <Badge tone="success">+2.8%</Badge>
-              <span className="text-xs text-muted">this month</span>
+            <div className="mt-4 flex items-end justify-between">
+              <div>
+                <p className="text-[10px] uppercase tracking-widest text-white/60">
+                  Balance
+                </p>
+                <p className="mt-1 text-xl font-bold">€8,420.60</p>
+              </div>
+              <p className="text-xs font-semibold">09/28</p>
             </div>
           </div>
         </Card>
