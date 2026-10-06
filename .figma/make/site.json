@@ -1,1 +1,10 @@
-{}
+{
+  "description": "Delivers a modular, maintainable full-stack web app designed for seamless scalability and easy collaboration, ensuring robust production-ready solutions.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
