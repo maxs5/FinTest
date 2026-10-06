@@ -127,7 +127,9 @@ function PageLoader() {
       aria-label="Loading page"
     >
       <div className="text-center">
-        <div className="mx-auto size-9 animate-spin rounded-full border-2 border-line border-t-accent-strong" />
+        <div
+          className="mx-auto size-9 animate-spin rounded-full border-2 border-line border-t-accent-strong"
+        />
         <p className="mt-3 text-sm font-semibold text-muted">Loading workspace…</p>
       </div>
     </div>
@@ -161,7 +163,9 @@ class AppErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState>
     return (
       <main className="grid min-h-screen place-items-center bg-canvas p-6">
         <Card className="w-full max-w-lg p-8 text-center">
-          <div className="mx-auto grid size-12 place-items-center rounded-2xl bg-danger-soft text-danger">
+          <div
+            className="mx-auto grid size-12 place-items-center rounded-2xl bg-danger-soft text-danger"
+          >
             <AlertTriangle size={24} />
           </div>
           <h1 className="mt-5 font-display text-2xl font-semibold">Something went wrong</h1>
