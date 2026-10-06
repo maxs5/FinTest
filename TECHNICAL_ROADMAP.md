@@ -2,12 +2,12 @@
 
 ## Current state
 
-CURRENT STAGE: 03 — Monorepo Foundation
+CURRENT STAGE: 04 — TypeScript and Tooling
 
 - [x] 01 — GitHub Repository
 - [x] 02 — Vercel Project
 - [x] 03 — Monorepo Foundation (workspace boundaries established)
-- [ ] 04 — TypeScript and Tooling
+- [~] 04 — TypeScript and Tooling (typecheck and format checks added; lint dependency still pending)
 - [ ] 05 — Frontend Foundation
 - [ ] 06 — Backend/API Foundation
 - [ ] 07 — PostgreSQL Connection
@@ -99,4 +99,6 @@ All work must use a new branch. main is never edited directly.
 
 Stage 04 — TypeScript and Tooling.
 
-Stage 04 must establish strict checks, formatting, linting and reproducible scripts before backend development begins.
+Implemented now: strict TypeScript compiler checks, reproducible typecheck, format-check and build-gating scripts. Lint is intentionally not marked complete until its dependency is added with a reproducible lockfile update.
+
+Do not start backend development until Stage 04 is complete.
