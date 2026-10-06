@@ -2,7 +2,7 @@
 
 ## Current state
 
-CURRENT STAGE: 07 — PostgreSQL Connection
+CURRENT STAGE: 08 — Environment Configuration
 
 - [x] 01 — GitHub Repository
 - [x] 02 — Vercel Project
@@ -10,8 +10,8 @@ CURRENT STAGE: 07 — PostgreSQL Connection
 - [x] 04 — TypeScript and Tooling (typecheck, formatting, and lint checks pass on Vercel)
 - [x] 05 — Frontend Foundation (Vercel quality gate passed)
 - [x] 06 — Backend/API Foundation
-- [~] 07 — PostgreSQL Connection
-- [ ] 08 — Environment Configuration
+- [x] 07 — PostgreSQL Connection
+- [~] 08 — Environment Configuration
 - [ ] 09 — Database Migrations
 - [ ] 10 — Database Schema
 - [ ] 11 — Seed/Test Data
@@ -127,8 +127,19 @@ Stage 06 is complete after successful Vercel deployment verification.
 - Database provider details isolated from future domain services.
 - No migrations, schema or seed data are introduced yet.
 
-Stage 07 is complete only after a real Neon database is connected and the Vercel database health endpoint returns `200`.
+Stage 07 is complete after the real Neon database was connected and the Vercel database health endpoint returned `200`.
+
+## Stage 08 scope
+
+- Central server configuration module introduced.
+- `DATABASE_URL` parsing removed from individual API routes.
+- Safe `.env.example` added without credentials.
+- DEV, QA, STAGE and PROD-SIM configuration mapping documented.
+- Server-only secrets explicitly separated from browser configuration.
+- Environment configuration rules documented for Vercel and local development.
+
+Stage 08 is complete only after the quality gate passes on Vercel with the centralized configuration in place.
 
 ## Next
 
-Connect a Neon PostgreSQL project through `DATABASE_URL`, verify `GET /api/db-health` on Vercel, then proceed to Stage 08 — Environment Configuration.
+Verify the Stage 08 quality gate on Vercel, then proceed to Stage 09 — Database Migrations.
