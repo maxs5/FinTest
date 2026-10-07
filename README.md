@@ -31,6 +31,8 @@ pnpm-workspace.yaml now defines the root application and future apps/* and packa
 
 Database migrations live under database/migrations and are executed explicitly with pnpm db:migrate. The migration runner keeps a checksum history in public.schema_migrations and never runs automatically as part of a normal Vercel build.
 
+The Stage 10 domain schema is documented in docs/architecture/DATABASE_SCHEMA.md and is introduced by database/migrations/0002_create_fintech_schema.sql.
+
 ## Status
 
 | Stage | Status |
@@ -43,10 +45,11 @@ Database migrations live under database/migrations and are executed explicitly w
 | 06 — Backend/API Foundation | Complete |
 | 07 — PostgreSQL Connection | Complete |
 | 08 — Environment Configuration | Complete |
-| 09 — Database Migrations | In progress |
-| 10–45 | Not started |
+| 09 — Database Migrations | Complete |
+| 10 — Database Schema | In progress |
+| 11–45 | Not started |
 
-The current UI is still a synthetic presentation layer. Stages 05–08 established the frontend, API, PostgreSQL connection, and environment boundaries. Stage 09 adds versioned database migration infrastructure; real fintech domain tables remain out of scope until Stage 10.
+The current UI is still a synthetic presentation layer. Stages 05–09 established the frontend, API, PostgreSQL connection, environment boundaries and migration infrastructure. Stage 10 introduces the persistent fintech domain schema; application services and seeded data remain later stages.
 
 ## Development
 
