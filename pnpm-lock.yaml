@@ -1499,7 +1499,8 @@ snapshots:
       picomatch: 4.0.7
 
 
-  file-entry-cache@8.0.0:    dependencies:
+  file-entry-cache@8.0.0:
+    dependencies:
       flat-cache: 4.0.1
 
 
