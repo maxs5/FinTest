@@ -1,21 +1,15 @@
 import {
   Activity,
-  AlertTriangle,
   ArrowRight,
   BookOpenCheck,
-  Box,
   Bug,
-  Check,
   CheckCircle2,
   Circle,
-  Clock3,
   Code2,
   Copy,
   FileCheck2,
   Filter,
-  FlaskConical,
   Gauge,
-  Globe2,
   MoreHorizontal,
   Play,
   Plus,
@@ -799,7 +793,7 @@ export function ReportsPage() {
       <Card className="p-6">
         <h2 className="font-display text-lg font-semibold">Quality trend</h2>
         <div className="mt-8 flex h-64 items-end gap-4 border-b border-line">
-          {[62, 68, 71, 74, 82, 86, 92].map((value, index) => (
+          {[62, 68, 71, 74, 82, 86, 92].map((value) => (
             <div key={value} className="group flex h-full flex-1 items-end">
               <div
                 className="w-full rounded-t-xl bg-mint transition group-hover:bg-accent"

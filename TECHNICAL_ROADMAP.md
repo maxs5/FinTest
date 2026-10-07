@@ -1,220 +1,158 @@
 # FinTest — Technical Roadmap
 
-## 1. Purpose
-FinTest is a free fintech application and QA playground.
+## Current state
 
-Goals:
-- working fintech-like product without real money;
-- realistic QA Workspace;
-- reproducible defects and releases;
-- manual, API, DB, security, performance and automated testing;
-- modular, reusable and maintainable architecture.
+CURRENT STAGE: 09 — Database Migrations
 
-README.md is the product summary. This file is the operational development roadmap and current-state tracker.
+- [x] 01 — GitHub Repository
+- [x] 02 — Vercel Project
+- [x] 03 — Monorepo Foundation (workspace boundaries established)
+- [x] 04 — TypeScript and Tooling (typecheck, formatting, and lint checks pass on Vercel)
+- [x] 05 — Frontend Foundation (Vercel quality gate passed)
+- [x] 06 — Backend/API Foundation
+- [x] 07 — PostgreSQL Connection
+- [x] 08 — Environment Configuration
+- [~] 09 — Database Migrations
+- [ ] 10 — Database Schema
+- [ ] 11 — Seed/Test Data
+- [ ] 12–45 — Core fintech, QA Workspace and quality engineering
 
-## 2. Current state
+Verified Vercel state:
+- Project: fin-test
+- Framework: Vite
+- GitHub: maxs5/FinTest
+- Production deployment: READY
+- Preview deployment from chore/verify-vercel: READY
 
-CURRENT STAGE: 02 — Vercel Project
+Current application state:
+- React/Vite/Tailwind presentation UI exists.
+- Vercel-compatible Node REST API exists under /api.
+- PostgreSQL connection foundation exists through Neon serverless driver.
+- DATABASE_URL is expected only as a server-side environment variable.
+- Versioned database migration infrastructure now exists.
+- Automated test suite and persistent fintech domain schema do not exist yet.
+- Largest inspected source file is below the 1,500-line hard limit.
 
-- [x] Repository, main branch, README, ignore rules and baseline exist.
-- [x] React/Vite/Tailwind presentation interface exists.
-- [x] Synthetic banking and QA Workspace screens exist.
-- [x] Vercel project connected to GitHub and Production deployment verified.
-- [ ] Preview deployment verification.
-- [ ] Backend/API.
-- [ ] PostgreSQL.
-- [ ] Persistent authentication.
-- [ ] Real financial/business logic.
-- [ ] Automated tests.
-- [ ] CI/CD.
-- [ ] Bug Engine.
-- [ ] Production-like data flow.
-
-The existing UI is a presentation prototype. Its screens do not prove that the corresponding backend features are implemented.
-
-Observed repository state:
-- React 19 + TypeScript + Vite 8 + Tailwind CSS 4.
-- No backend source is present.
-- No database, migrations or seeds are present.
-- No test suite is present.
-- package scripts currently provide dev, build, preview and format; test/lint/typecheck scripts are not defined.
-- No GitHub Actions workflow is present.
-- Largest inspected source file: src/pages/Quality.tsx — 826 lines; below the 1,500-line hard limit.
-
-Never mark a stage complete without verification.
-
-## 3. Development order
-
-Rule for every stage:
+## Development rule
 
 PLAN → IMPLEMENT → VERIFY → TEST → DOCUMENT → COMPLETE → NEXT
 
-### Foundation
-- [x] 01 — GitHub Repository
-- [ ] 02 — Vercel Project — GitHub connection and Production deployment verified; Preview verification in progress.
-- [ ] 03 — Monorepo Foundation — introduce apps/packages/database/docs/tests only when needed.
-- [ ] 04 — TypeScript and Tooling — strict checks, formatting, linting and reproducible scripts.
-- [ ] 05 — Frontend Foundation — routing, shared UI, API client, loading/error/empty states.
-- [ ] 06 — Backend/API Foundation — Vercel-compatible REST API, validation, errors, logging, health endpoint.
-- [ ] 07 — PostgreSQL Connection — select a free provider after checking current limits.
-- [ ] 08 — Environment Configuration — Development/Preview/Production variables; no secrets in git.
-- [ ] 09 — Database Migrations — reproducible schema changes.
-- [ ] 10 — Database Schema — users, accounts, transactions, constraints, indexes and relations.
-- [ ] 11 — Seed/Test Data — deterministic synthetic users, accounts and states.
+## Architecture
 
-### Core fintech
-- [ ] 12 — Authentication — register, login, logout, refresh, /me, hashing and middleware.
-- [ ] 13 — Users — ownership model and backend object-level authorization.
-- [ ] 14 — Accounts — multi-currency accounts, statuses and CRUD rules.
-- [ ] 15 — Dashboard — real API-backed balances and activity.
-- [ ] 16 — Transactions — list/detail/filter/sort/pagination/date filters.
-- [ ] 17 — Transfers — validation, balance checks and transaction creation.
-- [ ] 18 — Transaction Integrity — DB transactions, atomicity, rollback and concurrency strategy.
-- [ ] 19 — Idempotency — Idempotency-Key and replay protection.
-- [ ] 20 — Cards — virtual cards, status, freeze/unfreeze and limits.
-- [ ] 21 — Payments — simulated merchant payments and statuses.
-- [ ] 22 — Currency Exchange — rates, fees, exact arithmetic and rounding.
-- [ ] 23 — Notifications — event-driven creation and read/unread state.
-- [ ] 24 — RBAC — CUSTOMER, SUPPORT, MANAGER, ADMIN with backend enforcement.
-
-### QA Workspace
-- [ ] 25 — QA Workspace Foundation
-- [ ] 26 — Requirements
-- [ ] 27 — Test Cases
-- [ ] 28 — Checklists
-- [ ] 29 — Test Runs
-- [ ] 30 — Bug Management
-- [ ] 31 — Bug Seeding Engine
-- [ ] 32 — Release Management
-- [ ] 33 — Logical Environments — DEV / QA / STAGE / PROD-SIM.
-- [ ] 34 — Test Data Management
-- [ ] 35 — API Playground
-- [ ] 36 — Structured Logs
-- [ ] 37 — Audit Logs
-
-### Quality engineering
-- [ ] 38 — Automated Tests — unit, integration, API and E2E.
-- [ ] 39 — Security Testing — auth, authz, IDOR, validation, rate limits and data exposure.
-- [ ] 40 — Performance and Concurrency — critical paths and double-spend/race scenarios.
-- [ ] 41 — Failure Simulation — controlled timeouts, duplicate requests and downstream failures.
-- [ ] 42 — CI/CD — install → format/lint → typecheck → test → build.
-- [ ] 43 — Vercel Release Pipeline — feature → Preview → QA → main → Production/PROD-SIM.
-- [ ] 44 — Mobile — separate client using the stabilized API contract.
-- [ ] 45 — Continuous FinTest — repeating releases, requirements, tests, bugs, fixes and regression.
-
-## 4. Architecture rules
-- Start as a modular monolith.
+- Modular monolith first.
 - React + TypeScript frontend.
 - Node.js + TypeScript Vercel-compatible REST API.
 - PostgreSQL.
 - Route/Controller → Validation → Service → Repository → DB.
-- Business rules must not live in UI components.
-- SQL must not be scattered through UI or route handlers.
-- Reuse shared types, validation and UI components.
-- No duplicated business logic or types.
-- Monetary calculations use exact arithmetic.
-- Critical financial state changes are atomic.
-- Critical repeatable operations are idempotent.
-- Protected resources require backend object-level authorization.
-- Keep business logic portable and not coupled to Vercel.
-- No file may exceed 1,500 lines; prefer smaller focused modules.
+- Business rules stay outside UI.
+- Shared types/validation/UI are reusable.
+- Money uses exact arithmetic.
+- Critical financial changes are atomic.
+- Critical repeated operations are idempotent.
+- Backend enforces object-level authorization.
+- No mandatory Docker.
+- No paid services or paid APIs.
+- No file over 1,500 lines.
 
-## 5. Environment model
-| Environment | Purpose | Deployment mapping |
+## Monorepo rule
+
+pnpm-workspace.yaml defines:
+- root application .
+- future applications under apps/*
+- future shared packages under packages/*
+
+Do not create placeholder packages without a real consumer. Database, docs and test directories are introduced when their corresponding stage requires them.
+
+## Environments
+
+| Environment | Purpose | Mapping |
 |---|---|---|
-| DEV | Active development/debugging | Local / Development |
+| DEV | Development/debugging | Local |
 | QA | Main testing | Vercel Preview |
-| STAGE | Release candidate | Selected Preview/RC deployment |
-| PROD-SIM | Production-like safe simulation | Vercel Production |
+| STAGE | Release candidate | Selected Preview |
+| PROD-SIM | Production-like simulation | Vercel Production |
 
-Do not describe these as four independent free cloud environments.
+## QA model
 
-## 6. QA model
 Requirement → Test Case/Checklist → Test Run → Bug → Fix → Retest → Release
 
-Critical scenarios:
-- authentication and authorization;
-- IDOR/object ownership;
-- balances and transfers;
-- duplicate requests and concurrency;
-- payment state transitions;
-- exchange rounding;
-- transaction consistency;
-- notifications;
-- auditability.
+## Forbidden
 
-## 7. Defect model
-Required fields: ID, title, description, environment, build/release, severity, priority, difficulty, component, steps, expected/actual, evidence, status and traceability links.
-
-Lifecycle:
-OPEN → IN PROGRESS → FIXED → READY FOR RETEST → VERIFIED
-
-Alternative states: REOPENED / REJECTED / DUPLICATE / WONT FIX.
-
-Seeded defects must be reproducible and tied to environment/release/component.
-
-## 8. Release gate
-- no open Critical defects;
-- unacceptable High defects resolved or explicitly accepted;
-- regression passed;
-- migrations verified;
-- build passed;
-- applicable automated tests passed;
-- Preview/release candidate verified;
-- Production/PROD-SIM deployment verified;
-- release documentation updated.
-
-## 9. Forbidden
 - Direct changes to main.
-- Development without a feature/fix/chore/docs branch.
-- Skipping stages without recording the reason and verification.
-- Claiming unverified functionality as implemented.
-- Fake backend/API/database behavior presented as real functionality.
-- Paid services or paid APIs.
-- Docker as a mandatory architecture dependency.
-- Secrets, credentials or private keys in the repository.
-- Files over 1,500 lines.
-- Unnecessary duplication or dependencies.
-- Business rules hidden inside UI.
-- Breaking existing functionality without documenting and testing impact.
-- During a Git conflict, never keep both versions: choose only the new intended version.
+- Unverified functionality presented as implemented.
+- Secrets in git.
+- Unnecessary duplication.
+- Business logic hidden in UI.
+- Keeping both sides of a merge conflict: choose only the new intended version.
 
-## 10. Documentation rule
-When a feature changes:
-1. Update this roadmap/status when the stage state changes.
-2. Update README.md when product scope, architecture, setup or workflow changes.
-3. Add/update requirements and acceptance criteria where applicable.
-4. Add/update tests and QA documentation.
-5. Record release impact.
+## Documentation
 
-Documentation must be short, factual and synchronized with code.
+When product behavior, architecture, setup or workflow changes:
+1. Update this roadmap.
+2. Update README.md.
+3. Update relevant QA/requirements documentation.
+4. Record release impact.
 
-## 11. Branch rule
-All work starts from the latest main.
+## Branch
 
-Branch names:
-- feature/<name>
-- fix/<name>
-- chore/<name>
-- docs/<name>
+Current working branch: chore/monorepo-foundation
 
-Current branch: chore/verify-vercel
+All work must use a new branch. main is never edited directly.
 
-This branch contains only the requested roadmap. main must not be modified directly.
+## Stage 05 scope
 
-## 12. Agent operating rules
-Before changing code:
-1. Read this file.
-2. Inspect the current branch and relevant files.
-3. Identify the current stage.
-4. Implement only the current stage or explicitly approved corrective work.
-5. Verify the result.
-6. Update documentation/status.
-7. Report exactly what changed and what remains unverified.
+- Stable client-side navigation based on URL hashes so a selected workspace page survives refresh.
+- Central page validity checks so unknown hashes fall back to Overview.
+- Lazy loading remains the default for larger Banking and QA page groups.
+- A root React error boundary prevents an isolated render failure from leaving a blank application shell.
+- Loading state is exposed with accessible status semantics.
+- No new runtime dependency is introduced in this stage.
 
-If repository state contradicts this roadmap, inspect the code first. Do not invent status.
+Stage 05 is not complete until the full Vercel quality gate passes: typecheck, format check, lint and production build.
 
-## 13. Next action
-NEXT ACTION: Verify a Preview deployment for this branch, then complete stage 02.
+## Stage 06 scope
 
-Do not start backend, database or new fintech functionality until stage 02 and the required foundation stages are verified in order.
+- Vercel-compatible Node REST endpoint at GET /api/health.
+- Explicit rejection of unsupported HTTP methods.
+- API code included in the TypeScript quality gate.
+- No persistence or domain business logic introduced.
+
+Stage 06 is complete after successful Vercel deployment verification.
+
+## Stage 07 scope
+
+- PostgreSQL provider selected with the no-paid-services constraint.
+- Serverless PostgreSQL driver added without exposing database credentials to the client.
+- DATABASE_URL reserved as the server-side connection variable.
+- GET /api/db-health verifies database reachability with SELECT 1.
+- Database provider details isolated from future domain services.
+- No migrations, schema or seed data are introduced yet.
+
+Stage 07 is complete after the real Neon database was connected and the Vercel database health endpoint returned 200.
+
+## Stage 08 scope
+
+- Central server configuration module introduced.
+- DATABASE_URL parsing removed from individual API routes.
+- Safe .env.example added without credentials.
+- DEV, QA, STAGE and PROD-SIM configuration mapping documented.
+- Server-only secrets explicitly separated from browser configuration.
+- Environment configuration rules documented for Vercel and local development.
+
+Stage 08 is complete after the quality gate passed on Vercel with the centralized configuration in place.
+
+## Stage 09 scope
+
+- Versioned SQL migrations introduced under database/migrations.
+- Migration metadata stored in public.schema_migrations.
+- Applied migration checksums are verified to prevent silent edits.
+- Migration batches run in a PostgreSQL transaction.
+- A transaction-level advisory lock serializes concurrent migration runners.
+- db:migrate provides one explicit migration command.
+- Domain schema remains deferred to Stage 10.
+
+Stage 09 is complete only after the quality gate passes on Vercel and the migration runner is verified against the configured Neon database.
+
+## Next
+
+Verify Stage 09 on Vercel and run the migration command against the configured Neon database. Then proceed to Stage 10 — Database Schema.

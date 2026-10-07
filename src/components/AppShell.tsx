@@ -30,7 +30,11 @@ import { IconButton } from "./ui"
 
 export type PageId = "overview" | "accounts" | "activity" | "transfer" | "cards" | "payments" | "exchange" | "qa-dashboard" | "requirements" | "test-cases" | "test-runs" | "bugs" | "releases" | "api" | "environments" | "reports"
 
-type NavItem = { id: PageId label: string icon: LucideIcon }
+type NavItem = {
+  id: PageId
+  label: string
+  icon: LucideIcon
+}
 
 const bankNav: NavItem[] = [
   { id: "overview", label: "Overview", icon: CircleGauge },
