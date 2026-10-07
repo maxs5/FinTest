@@ -20,5 +20,8 @@ Current domain schema includes users, accounts, transactions, transfers, cards, 
 Run:
 
 pnpm db:migrate
+pnpm db:verify
 
-The command requires a server-side DATABASE_URL.
+The first command applies pending migrations. The second verifies that migration metadata and all required fintech tables are present.
+
+Both commands require a server-side DATABASE_URL.
