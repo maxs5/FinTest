@@ -4,5 +4,8 @@
   "semi": false,
   "singleQuote": false,
   "trailingComma": "all",
-  "ignorePatterns": [".vercel/**"]
+  "ignorePatterns": [
+    ".vercel/**",
+    "database/scripts/migrate.mjs"
+  ]
 }
