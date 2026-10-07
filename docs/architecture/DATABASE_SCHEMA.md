@@ -43,7 +43,7 @@ Users have explicit roles:
 - MANAGER
 - ADMIN
 
-Resource ownership is represented with foreign keys. Backend authorization remains mandatory; a database foreign key does not replace object-level authorization.
+Resource ownership is represented with foreign keys. Card-to-account ownership is enforced with composite foreign keys, and card-to-account payment consistency is enforced at the database level. Backend authorization remains mandatory; database constraints do not replace object-level authorization.
 
 ### Idempotency
 
