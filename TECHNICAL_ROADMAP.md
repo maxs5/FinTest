@@ -2,7 +2,7 @@
 
 ## Current state
 
-CURRENT STAGE: 09 — Database Migrations
+CURRENT STAGE: 10 — Database Schema
 
 - [x] 01 — GitHub Repository
 - [x] 02 — Vercel Project
@@ -12,8 +12,8 @@ CURRENT STAGE: 09 — Database Migrations
 - [x] 06 — Backend/API Foundation
 - [x] 07 — PostgreSQL Connection
 - [x] 08 — Environment Configuration
-- [~] 09 — Database Migrations
-- [ ] 10 — Database Schema
+- [x] 09 — Database Migrations
+- [~] 10 — Database Schema
 - [ ] 11 — Seed/Test Data
 - [ ] 12–45 — Core fintech, QA Workspace and quality engineering
 
@@ -95,7 +95,7 @@ When product behavior, architecture, setup or workflow changes:
 
 ## Branch
 
-Current working branch: chore/monorepo-foundation
+Current working branch: feat/database-schema
 
 All work must use a new branch. main is never edited directly.
 
@@ -149,10 +149,23 @@ Stage 08 is complete after the quality gate passed on Vercel with the centralize
 - Migration batches run in a PostgreSQL transaction.
 - A transaction-level advisory lock serializes concurrent migration runners.
 - db:migrate provides one explicit migration command.
-- Domain schema remains deferred to Stage 10.
+- Vercel quality gate passed after the lockfile was regenerated and deployed successfully.
 
-Stage 09 is complete only after the quality gate passes on Vercel and the migration runner is verified against the configured Neon database.
+Stage 09 is complete at the repository/deployment level; the migration runner still requires an explicit execution against the configured Neon database before production data work begins.
+
+## Stage 10 scope
+
+- Core fintech domain schema introduced through 0002_create_fintech_schema.sql.
+- Users, multi-currency accounts and transaction ledger are persisted.
+- Transfers and payments have durable idempotency keys.
+- Virtual cards, exchange rates and notifications have persistent models.
+- Audit events have a dedicated append-oriented table.
+- Monetary values use PostgreSQL NUMERIC rather than floating-point types.
+- Domain constraints and indexes protect basic data integrity and query paths.
+- Schema architecture is documented separately from migration mechanics.
+
+Stage 10 is complete only after the migration is applied successfully to the configured Neon database, the schema is inspected, and the Vercel quality gate passes.
 
 ## Next
 
-Verify Stage 09 on Vercel and run the migration command against the configured Neon database. Then proceed to Stage 10 — Database Schema.
+Apply and verify the Stage 10 schema against Neon, then proceed to Stage 11 — Seed/Test Data.
