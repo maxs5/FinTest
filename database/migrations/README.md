@@ -13,7 +13,9 @@ Rules:
 - Each migration runs inside the same PostgreSQL transaction as its metadata record.
 - The migration runner uses a PostgreSQL transaction-level advisory lock so concurrent runners are serialized.
 - 0001_create_schema_migrations.sql bootstraps the migration metadata table.
-- Domain tables begin with the next migration in Stage 10.
+- 0002_create_fintech_schema.sql introduces the first persistent fintech domain model.
+
+Current domain schema includes users, accounts, transactions, transfers, cards, payments, exchange rates, notifications and audit_log.
 
 Run:
 
