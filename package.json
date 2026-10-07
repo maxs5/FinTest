@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "check": "pnpm typecheck && pnpm format:check && pnpm lint",
     "lint": "eslint .",
-    "db:migrate": "node database/scripts/migrate.mjs"
+    "db:migrate": "node database/scripts/migrate.mjs",
+    "db:verify": "node database/scripts/verify-schema.mjs"
   },
   "dependencies": {
     "@neondatabase/serverless": "1.1.0",
